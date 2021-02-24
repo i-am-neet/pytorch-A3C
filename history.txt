@@ -1,0 +1,105 @@
+    1  cd
+    2  ll
+    3  sudo apt install -y x11-apps
+    4  xclock 
+    5  sudo chown pwrai:pwrai ~/.Xauthority 
+    6  sudo chmod 0600 ~/.Xauthority 
+    7  xeyes 
+    8  s
+    9  ls
+   10  git clone
+   11  sudo apt install git
+   12  sudo apt update
+   13  sudo apt install git
+   14  git clone https://github.com/MorvanZhou/pytorch-A3C.git
+   15  ls
+   16  cd pytorch-A3C/
+   17  ls
+   18  vim continuous_A3C.py 
+   19  python -V
+   20  python continuous_A3C.py 
+   21  pip -V
+   22  pip install gym
+   23  sudo apt install xvfb
+   24  sudo apt install python-opengl libav-tools
+   25  sudo apt install python-opengl
+   26  sudo apt install libav-tools
+   27  sudo apt install ffmpeg
+   28  python continuous_A3C.py 
+   29  ls
+   30  mkdir ../recording
+   31  ls ..
+   32  python continuous_A3C.py 
+   33  xvfb-run -s "-screen 0 1400x900x24" python continuous_A3C.py 
+   34  l
+   35  ls ../recording/
+   36  cd..
+   37  cd ..
+   38  ls
+   39  cd pytorch-A3C/
+   40  ls
+   41  vim continuous_A3C.py 
+   42  cd
+   43  ls
+   44  vim /tmp/test-gym.py
+   45  cd /tmp/
+   46  xvfb-run -s "-screen 0 1400x900x24" python test-gym.py 
+   47  mkdir recording
+   48  xvfb-run -s "-screen 0 1400x900x24" python test-gym.py 
+   49  ls
+   50  ls recording/
+   51  sudo apt install ffmpeg
+   52  sudo apt install python-opengl
+   53  ffmpeg -v error -i vid.mp4
+   54  ls
+   55  cd recording/
+   56  ls
+   57  ffmpeg -v error -i vid.mp4
+   58  ffmpeg -v error -i vid.mp4 -f null - 2>error.log
+   59  vim error.log 
+   60  ls
+   61  cd
+   62  pip show gym
+   63  find /opt/anaconda/envs/wmlce/lib/python3.7/site-packages/ -name "video_recorder.py"
+   64  vim /opt/anaconda/envs/wmlce/lib/python3.7/site-packages/gym/wrappers/monitoring/video_recorder.py 
+   65  cd /tmp/
+   66  ls
+   67  rm recording/*
+   68  ls recording/
+   69  xvfb-run -s "-screen 0 1400x900x24" python test-gym.py 
+   70  vim /opt/anaconda/envs/wmlce/lib/python3.7/site-packages/wrappers/monitoring/video_recorder.py
+   71  vim /opt/anaconda/envs/wmlce/lib/python3.7//site-packages/gym/wrappers/monitoring/video_recorder.py 
+   72  cd ~/pytorch-A3C/
+   73  ls
+   74  cd ..
+   75  ls
+   76  rm recording/*
+   77  cd pytorch-A3C/
+   78  vim continuous_A3C.py 
+   79  xvfb-run -s "-screen 0 1400x900x24" python continuous_A3C.py 
+   80  vim continuous_A3C.py 
+   81  ls ../recording/
+   82  rm ../recording/*
+   83  ls ../recording/
+   84  xvfb-run -s "-screen 0 1400x900x24" python continuous_A3C.py 
+   85  ll ../recording/
+   86  ls
+   87  cd ..
+   88  ls
+   89  rm recording/*
+   90  cd pytorch-A3C/
+   91  vim continuous_A3C.py 
+   92  xvfb-run -s "-screen 0 1400x900x24" python continuous_A3C.py 
+   93  \
+   94  ls
+   95  git stat
+   96  git status
+   97  git remote -v
+   98  git add -A
+   99  git stat
+  100  git status
+  101  cd .
+  102  cd ..
+  103  ls
+  104  history
+  105  history >> history.txt

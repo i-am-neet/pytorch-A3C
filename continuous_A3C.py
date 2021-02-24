@@ -12,13 +12,14 @@ import torch.nn.functional as F
 import torch.multiprocessing as mp
 from shared_adam import SharedAdam
 import gym
+from gym.wrappers.monitoring import video_recorder
 import math, os
 os.environ["OMP_NUM_THREADS"] = "1"
 
 UPDATE_GLOBAL_ITER = 5
 GAMMA = 0.9
-MAX_EP = 3000
-MAX_EP_STEP = 200
+MAX_EP = 8000
+MAX_EP_STEP = 400
 
 env = gym.make('Pendulum-v0')
 N_S = env.observation_space.shape[0]
@@ -75,6 +76,7 @@ class Worker(mp.Process):
         self.gnet, self.opt = gnet, opt
         self.lnet = Net(N_S, N_A)           # local network
         self.env = gym.make('Pendulum-v0').unwrapped
+        self.vid = video_recorder.VideoRecorder(self.env, path="../recording/con-a3c-%i.mp4"%name)
 
     def run(self):
         total_step = 1
@@ -85,6 +87,10 @@ class Worker(mp.Process):
             for t in range(MAX_EP_STEP):
                 if self.name == 'w0':
                     self.env.render()
+
+                # Recording
+                self.vid.capture_frame()
+
                 a = self.lnet.choose_action(v_wrap(s[None, :]))
                 s_, r, done, _ = self.env.step(a.clip(-2, 2))
                 if t == MAX_EP_STEP - 1:
@@ -130,4 +136,6 @@ if __name__ == "__main__":
     plt.plot(res)
     plt.ylabel('Moving average ep reward')
     plt.xlabel('Step')
+    plt.savefig('../recording/result.png')
     plt.show()
+
